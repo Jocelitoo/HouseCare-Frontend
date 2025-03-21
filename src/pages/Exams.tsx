@@ -55,7 +55,7 @@ export const Exams = () => {
 
             return (
               <div className="flex flex-col bg-blue-100 rounded-md overflow-hidden">
-                <img src={exam.imageUrl} />
+                <img src={exam.imageUrl} width={400} height={250} />
 
                 <div
                   className="

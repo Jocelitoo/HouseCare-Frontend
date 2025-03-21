@@ -55,7 +55,7 @@ export const Specialtys = () => {
 
             return (
               <div className="flex flex-col bg-blue-100 rounded-md overflow-hidden">
-                <img src={specialty.imageUrl} />
+                <img src={specialty.imageUrl} width={400} height={250} />
 
                 <div
                   className="

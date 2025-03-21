@@ -52,7 +52,7 @@ export const Medics = () => {
           {medics.map((medic) => {
             return (
               <div className="flex flex-col items-center text-center gap-2 bg-blue-100 p-4 rounded-md  ">
-                <img src={medic.imageUrl} />
+                <img src={medic.imageUrl} width={400} height={250} />
                 <p className="text-xl font-semibold">{medic.name}</p>
                 <p>{medic.specialty}</p>
                 <p>CRM: {medic.crm}</p>
