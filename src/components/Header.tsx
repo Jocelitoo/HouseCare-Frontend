@@ -20,7 +20,7 @@ export const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-blue-100 flex items-center justify-between py-2 px-[2vw] sm:px-[4vw] lg:px-[6vw]">
+    <header className="fixed top-0 left-0 w-[100vw] z-50 bg-blue-100 flex items-center justify-between py-2 px-[2vw] sm:px-[4vw] lg:px-[6vw]">
       <p className="flex">
         <Activity className="text-blue-400" />{" "}
         <a href="/" className="ml-1">

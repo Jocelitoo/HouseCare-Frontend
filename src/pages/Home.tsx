@@ -12,7 +12,9 @@ import {
   User2,
 } from "lucide-react";
 import sobre from "../assets/images/sobre.jpg";
-import banner from "../assets/images/banner.jpg";
+import bannerDesktop from "../assets/images/banner-desktop.jpg";
+import bannerTablet from "../assets/images/banner-tablet.jpg";
+import bannerMobile from "../assets/images/banner-mobile.jpg";
 
 const infos = [
   {
@@ -72,7 +74,29 @@ export const Home = () => {
   return (
     <main className="flex flex-col grow space-y-8 mt-[52px] mb-8">
       <div className="relative">
-        <img src={banner} alt="foto" className="w-full h-auto object-contain" />
+        <picture>
+          <source
+            media="(max-width:639px)"
+            srcSet={bannerMobile}
+            type="image/jpg"
+            width={640}
+            height={427}
+          />
+          <source
+            media="(max-width:1023px)"
+            srcSet={bannerTablet}
+            type="image/jpg"
+            width={1024}
+            height={683}
+          />
+          <img
+            src={bannerDesktop}
+            alt="Médica conversando com paciente em uma sala de exames"
+            className="w-full h-auto object-contain"
+            width={1920}
+            height={1280}
+          />
+        </picture>
 
         <div className="flex items-center sm:absolute sm:top-0 sm:w-fit sm:h-full">
           <div className="w-full space-y-4 p-4 text-center bg-blue-200/75 lg:p-12">
@@ -104,7 +128,13 @@ export const Home = () => {
             sua saúde!
           </p>
 
-          <img src={sobre} className="hidden sm:block" />
+          <img
+            src={sobre}
+            width={700}
+            height={467}
+            alt="Médica conferindo os batimentos cardíacos de um paciente"
+            className="hidden sm:block"
+          />
         </div>
       </div>
 
