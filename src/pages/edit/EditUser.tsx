@@ -100,34 +100,6 @@ export const EditUser = () => {
       .finally(() => setIsLoading(false));
   };
 
-  const deleteUser = () => {
-    fetch(`${import.meta.env.VITE_API_LINK}/users`, {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-        authorization: `Bearer ${token}`,
-      },
-    })
-      .then(async (response) => {
-        if (!response.ok) {
-          const errorData = await response.json(); // Captura o JSON da resposta
-          throw new Error(errorData.error || "Erro desconhecido");
-        }
-
-        return response.json();
-      })
-      .then(() => {
-        sessionStorage.removeItem("token");
-        location.replace("/");
-      })
-      .catch((e) => {
-        toast(e.message, {
-          style: { backgroundColor: "#e74c3c" },
-        });
-      })
-      .finally(() => setIsLoading(false));
-  };
-
   return (
     <main className="grow flex flex-col gap-4  items-center mt-[52px] py-8 px-[2vw] sm:px-[4vw] lg:px-[6vw]">
       <h2 className="font-bold text-3xl">Editar usuário</h2>
@@ -182,15 +154,6 @@ export const EditUser = () => {
               Editar
             </Button>
           )}
-
-          <Button
-            size={"lg"}
-            type="button"
-            onClick={() => deleteUser()}
-            className="w-full cursor-pointer text-black bg-red-400 transition-colors duration-300 hover:bg-red-600"
-          >
-            Deletar conta
-          </Button>
         </form>
       </Form>
     </main>
